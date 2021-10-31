@@ -1,8 +1,17 @@
 from django.db import models
 from django.db.models.deletion import SET_NULL
 from django.core.validators import FileExtensionValidator
+from django.contrib.auth.models import User
 
 # Create your models here.
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    profile_pic = models.ImageField(upload_to = "profile_images", null=True, blank=True)
+    coins = models.IntegerField(null=True, blank=True)
+
+    def __str__(self):
+        return str(self.user.username)
+
 class Brand(models.Model):
     brand_name = models.CharField(max_length=100)
     logo = models.ImageField(upload_to="brand_images", null=True)
