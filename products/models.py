@@ -20,3 +20,4 @@ class Product(models.Model):
     brand = models.ForeignKey(Brand, on_delete=SET_NULL, null=True)
     image = models.ManyToManyField(ProductImage, blank=True)
     obj = models.FileField(upload_to='product_obj', null=True, blank=True, validators=[FileExtensionValidator(allowed_extensions=['obj'])])
+    echo_ar = models.TextField(default='', blank=True, null=True)
