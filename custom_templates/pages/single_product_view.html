@@ -114,7 +114,7 @@
     const canvas = document.querySelector('#c');
     const renderer = new THREE.WebGLRenderer({canvas});
 
-    const fov = 60;
+    const fov = 90;
     const aspect = 2;  // the canvas default
     const near = 0.1;
     const far = 100;
@@ -170,9 +170,9 @@
     {
         const objLoader = new OBJLoader();
         objLoader.load('{{product.obj.url}}', (root) => {
-            root.scale.x = 20
-            root.scale.y = 20
-            root.scale.z = 20
+            root.scale.x = 14
+            root.scale.y = 14
+            root.scale.z = 14
         scene.add(root);
         });
     }
