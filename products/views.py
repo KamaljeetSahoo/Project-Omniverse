@@ -65,5 +65,18 @@ def add_coins(request, user_id, num_coins):
     profile.save()
     return JsonResponse({'final_coins': user.profile.coins})
 
+def share_coins(request, user_id, num_coins, reciever_id):
+    user = User.objects.get(id=user_id)
+    rc = User.objects.get(id=reciever_id)
+    #removing coins from sender
+    profile = user.profile
+    profile.coins -= num_coins
+    profile.save()
+    #adding coins to the reciever
+    profile = rc.profile
+    profile.coins += num_coins
+    profile.save()
+    return JsonResponse({'final_coins': user.profile.coins})
+
 def current_user(request):
     return JsonResponse({'current_user': request.user.id})
