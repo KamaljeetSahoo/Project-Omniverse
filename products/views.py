@@ -1,5 +1,7 @@
+from django.http.response import JsonResponse
 from django.shortcuts import redirect, render
 from .models import Brand, Product, ProductImage
+from django.contrib.auth.models import User
 
 # Create your views here.
 def landing_page(request):
@@ -55,3 +57,13 @@ def handle_add_product(request):
             return render(request, 'pages/add_product.html')
     else:
         return redirect('login')
+
+def add_coins(request, user_id, num_coins):
+    user = User.objects.get(id=user_id)
+    profile = user.profile
+    profile.coins += num_coins
+    profile.save()
+    return JsonResponse({'final_coins': user.profile.coins})
+
+def current_user(request):
+    return JsonResponse({'current_user': request.user.id})
