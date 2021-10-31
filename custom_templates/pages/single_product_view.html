@@ -9,8 +9,7 @@
 
 <div class="content">
     <div class="page-inner">
-        <h4 class="page-title">Single Product Page</h4>
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-md-4">
                 <div class="card card-post card-round">
                     <img class="card-img-top" src="{{product.image.all.0.image.url}}" alt="Card image cap">
@@ -27,27 +26,10 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="container mt-3 mb-3">
-            <canvas id="c"></canvas>
-        </div>
-        <div class="container col-md-3">
-            <div class="card card-post">
-                <img src="../../static/assets/img/qr.png" alt="" class="card-img-top">
-            </div>
-            <div class="card-body">
-                <div class="d-flex text-center">
-                    <p>
-                        <div class="container mt-3 mb-3">
-                            <a href="{{product.echo_ar}}" target="_blank"><button class="btn btn-primary btn-rounded btn-xl">View In AR</button></a>
-                        </div>
-                    </p>
-                </div>
-            </div>
-        </div>
+        </div> -->
         <div class="container">
-            <div class="row">
-                <div class="col-md-6">
+            <div class="row mb-5">
+                <div class="col-md-4 mr-3">
                     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
                         {% for image in product.image.all %}
@@ -71,6 +53,45 @@
                           <span class="sr-only">Next</span>
                         </a>
                       </div>
+                </div>
+                <div class="col-md-5 ml-3">
+                   <h1 class="p_name">{{product.name}}</h1>
+                   <h3 class="p_desc">{{product.description}}</h3>
+                   <h1 class="p_pri">Rs. {{product.price}} &nbsp <span class="strike"><del>Rs. 2000  &nbsp </del></span> <span class="disc">(20% off)</span></h1>
+                   <h6 class="pri_desc">Inclusive of all taxes.</h6><br>
+                    <h2>SELECT SIZE | &nbsp <span>SIZE CHART </span></h2>
+                        <button class="size_btn">S</button> &nbsp;
+                        <button class="size_btn">M</button> &nbsp;
+                        <button class="size_btn">L</button> &nbsp;
+                        <button class="size_btn">XL</button> &nbsp;<br><br>
+                    <div class="addi">
+                        <p class="addi">100% Original Products <br>
+                            Pay on delivery might be available <br>
+                            Easy 30 days returns and exchanges <br>
+                            Try & Buy might be available</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <center><h1 class="title2">Check how it fits you!</h1></center>
+        <div class="row">
+            <div class="container mt-3 mb-3 col-md-7">
+                <canvas id="c"></canvas>
+            </div>
+            <div class="container col-md-3 mt-3">
+                <div class="card card-post">
+                    <img src="../../static/assets/img/qr.png" alt="" class="card-img-top">
+                    <center><p>Scan on your phone to view in AR.</p></center>
+                </div>
+                <center><h3>OR</h3></center>
+                <div class="card-body">
+                    <div class="d-flex text-center">
+                        <p>
+                            <div class="container mb-3">
+                                <a href="{{product.echo_ar}}" target="_blank"><button class=" ARbutton btn btn-rounded btn-xl">View In Web</button></a>
+                            </div>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>

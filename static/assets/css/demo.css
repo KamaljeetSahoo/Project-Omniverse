@@ -1,3 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Montserrat:wght@100&family=Satisfy&display=swap');
+@font-face {
+	font-family: LogoFont;
+	src: url(../fonts/Mishella-w1Pdw.otf) format(opentype);
+}
+
+:root {
+	--first: #F5C6A5;
+	--second: #FF7777;
+	--third: #A2416B;
+	--fourth: #852747;
+  }
+
 .custom-template {
 	position: fixed;
 	top: 50%;
@@ -309,3 +322,123 @@ body[data-background-color="dark"] .demo-icon .icon-class {
 	height: 100%;
 	display: block;
   }
+
+
+.p_name{
+	font-weight: 800;
+	font-size: 40px;
+}
+
+.p_desc{
+	margin: 3.5% 0;
+	color: rgb(141, 141, 141);
+}
+
+.p_pri{
+	font-weight: 700;
+}
+
+.addi{
+	font-size: 15px;
+}
+
+.strike{
+	font-size: 20px;
+	font-weight: 400;
+	color:rgb(104, 104, 104)
+}
+
+.disc{
+	color: var(--second);
+}
+
+.pri_desc{
+	color: #03a685;
+	font-weight: 600;
+	font-size: larger;
+}
+
+.title2{
+	font-family: Satisfy;
+	font-size: 40px;
+	color: var(--third);
+}
+
+.ARbutton{
+	background-color: var(--second);
+	color: white;
+}
+
+.size_btn{
+	background-color: #fff;
+    border: 1px solid #bfc0c6;
+    border-radius: 50px;
+    padding: 0;
+    min-width: 50px;
+    height: 50px;
+    text-align: center;
+    cursor: pointer; 
+    color: #282c3f;
+}
+
+.size_btn:hover{
+	border: 1px solid var(--third);
+}
+
+.navbarBG{
+	background-color: var(--first);
+} 
+
+.sidebarBG{
+	background-color: var(--first);
+}
+.github-btn{
+	background-color: var(--third);
+	color: white;
+}
+
+.sidebar .nav > .nav-item a p, .sidebar[data-background-color="white"] .nav > .nav-item a p {
+    color: rgb(51, 51, 51);
+	font-weight: 500;
+}
+
+.username{
+	color: var(--fourth);
+	text-decoration: none;
+}
+
+.username:link{
+	text-decoration: none;
+}
+
+.price{
+	color: var(--third);
+}
+
+.pri-del{
+	font-size: 10px;
+	color: #f59595;
+}
+
+.hover-effect{
+	transition: transform .3s;
+}
+.hover-effect:hover{
+	transform: scale(1.06);
+}
+
+.page-title{
+	font-family: Montserrat;
+	color: var(--third);
+
+}
+
+.brand-logo{
+	font-family: "Amatic SC";
+	font-size: 40px;
+	font-weight: 600;
+	padding-left: 20%;
+
+}
+
+/* apna color aaya tha? lol sirf usme */
