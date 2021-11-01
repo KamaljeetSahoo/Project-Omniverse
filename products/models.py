@@ -6,8 +6,8 @@ from django.contrib.auth.models import User
 # Create your models here.
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    profile_pic = models.ImageField(upload_to = "profile_images", null=True, blank=True)
-    coins = models.IntegerField(null=True, blank=True)
+    profile_pic = models.ImageField(upload_to = "profile_images", default="profile_images/cat.jpeg" ,null=True, blank=True)
+    coins = models.IntegerField(null=True, blank=True, default=0)
 
     def __str__(self):
         return str(self.user.username)
