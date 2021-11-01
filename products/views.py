@@ -80,3 +80,35 @@ def share_coins(request, user_id, num_coins, reciever_id):
 
 def current_user(request):
     return JsonResponse({'current_user': request.user.id})
+
+def share_coins_view(request):
+    if request.user.is_authenticated:
+        context = {
+            'users': User.objects.all()
+        }
+        return render(request, 'pages/share_coins.html', context=context)
+    else:
+        return redirect('login')
+
+def change_share_coin_status(request):
+    if request.user.is_authenticated:
+        context = {
+                'users': User.objects.all()
+            }
+        if request.method == 'POST':
+            print(request.POST)
+            user = User.objects.get(id=int(request.user.id))
+            rc = User.objects.get(id=int(request.POST['user_id']))
+            #removing coins from sender
+            profile = user.profile
+            profile.coins -= int(request.POST['num_coins'])
+            profile.save()
+            #adding coins to the reciever
+            profile = rc.profile
+            profile.coins += int(request.POST['num_coins'])
+            profile.save()
+            return render(request, 'pages/share_coins.html', context=context)
+        else:
+            return render(request, 'pages/share_coins.html', context=context)
+    else:
+        return redirect('login')
