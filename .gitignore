@@ -14,7 +14,6 @@ profile_images/
 .DS_Store
 # Distribution / packaging
 .Python
-build/
 develop-eggs/
 dist/
 downloads/
