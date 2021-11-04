@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 # Create your views here.
 def landing_page(request):
     if request.user.is_authenticated:
-        return render(request, 'layouts/base1.html')
+        return render(request, 'pages/game_page.html')
     else:
         return redirect('login')
 
