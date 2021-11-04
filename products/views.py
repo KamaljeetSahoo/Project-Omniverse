@@ -63,7 +63,8 @@ def add_coins(request, user_id, num_coins):
     profile = user.profile
     profile.coins += num_coins
     profile.save()
-    return JsonResponse({'final_coins': user.profile.coins})
+    # return JsonResponse({'final_coins': user.profile.coins})
+    return redirect("homepage")
 
 def share_coins(request, user_id, num_coins, reciever_id):
     user = User.objects.get(id=user_id)
