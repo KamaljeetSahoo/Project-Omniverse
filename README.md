@@ -2,7 +2,7 @@
   <a href="https://github.com/KamaljeetSahoo/Project-Omniverse">
     <img src="logo.jpeg" alt="Logo" width="1000" height="275">
   </a>
-  <h3 align="center">6th Sense</h3>
+  <h3 align="center">Project Omniverse</h3>
 </p>
 
 
