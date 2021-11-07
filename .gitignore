@@ -7,10 +7,7 @@ __pycache__/
 *.so
 
 .vscode/
-brand_images/
-product_images/
-product_obj/
-profile_images/
+
 .DS_Store
 # Distribution / packaging
 .Python
