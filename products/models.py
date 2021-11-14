@@ -30,3 +30,4 @@ class Product(models.Model):
     image = models.ManyToManyField(ProductImage, blank=True)
     obj = models.FileField(upload_to='product_obj', null=True, blank=True, validators=[FileExtensionValidator(allowed_extensions=['obj'])])
     echo_ar = models.TextField(default='', blank=True, null=True)
+    echo_ar_qr = models.ImageField(upload_to="echo_qr_codes/", blank=True, null=True)
